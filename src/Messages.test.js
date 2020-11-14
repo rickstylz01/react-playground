@@ -12,13 +12,15 @@ describe('Messages component', () => {
 
   it('renders the UI as expected', () => {
     const tree = renderer
-      .create(<Messages name="Messages" unread={4} />).toJSON();
+      .create(<Messages name="Messages" unread={4} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders th UI as expected with no unreads', () => {
+  it('renders the UI as expected with no unreads', () => {
     const tree = renderer
-      .create(<Messages name="Messages" unread={0} />).toJSON();
+      .create(<Messages name="Messages" unread={0} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   })
 });
