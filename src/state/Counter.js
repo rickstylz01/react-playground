@@ -1,14 +1,15 @@
 import React from 'react';
 
 class Counter extends React.Component{
-  state = { 
-    count: 0
-  };
+  constructor(props) {
+    console.log('props in constructor', props)
+    super(props)
+    this.state = { count: 0 }
+  }
   handleButtonclick = () => {
-    const newCount = this.state.count + 1
-    this.setState({
-      count: newCount
-    })
+    console.log('props in handleButtonclick', this.props)
+    console.log('state in handleButtonclick', this.state)
+    this.setState({ count: this.state.count + 1 })
   }
   render() {
     return (
