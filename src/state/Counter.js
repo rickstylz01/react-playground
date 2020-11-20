@@ -8,7 +8,7 @@ class Counter extends React.Component{
     return (
       <div>
         <p>The current count: {this.state.count}</p>
-        <button>
+        <button onClick={function() { console.log('clicked!') }}>
           Add 1
         </button>
       </div>
