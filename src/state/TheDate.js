@@ -10,6 +10,10 @@ class TheDate extends React.Component {
       console.log('tick')
     }, 1000)
   }
+  componentWillUnmount() {
+    clearInterval(this.interval)
+    }
+  }
   render() {
     return (
       <div>
