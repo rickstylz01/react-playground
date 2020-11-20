@@ -4,8 +4,11 @@ class Counter extends React.Component{
   state = { 
     count: 0
   };
-  handleButtonclick() {
-    console.log('clicked!')
+  handleButtonclick = () => {
+    const newCount = this.state.count + 1
+    this.setState({
+      count: newCount
+    })
   }
   render() {
     return (
