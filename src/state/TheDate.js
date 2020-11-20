@@ -5,6 +5,11 @@ class TheDate extends React.Component {
     super(props)
     this.state = { datetime: new Date() };
   }
+  componentDidMount() {
+    setInterval(() => {
+      console.log('tick')
+    }, 1000)
+  }
   render() {
     return (
       <div>
