@@ -11,7 +11,7 @@ class App extends Component {
         <Messages name="Messages" unread={0}/>
         <Messages name="Notifications" unread={10}/>
         <TheDate />
-        <Counter count={123} />
+        <Counter count={123} step={5} />
       </div>
     );
   }

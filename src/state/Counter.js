@@ -9,13 +9,13 @@ class Counter extends React.Component{
   handleButtonclick = () => {
     console.log('props in handleButtonclick', this.props)
     console.log('state in handleButtonclick', this.state)
-    this.setState({ count: this.state.count + 1 })
+    this.setState({ count: this.state.count + this.props.step || 1 })
   }
   render() {
     return (
       <div>
         <p>The current count: {this.state.count}</p>
-        <button onClick={this.handleButtonclick}>
+        <button onClick={this.handleButtonclick} >
           Add 1
         </button>
       </div>
