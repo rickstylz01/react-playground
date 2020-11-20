@@ -13,7 +13,6 @@ class TheDate extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval)
     }
-  }
   render() {
     return (
       <div>
