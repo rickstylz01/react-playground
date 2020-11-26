@@ -19,10 +19,14 @@ class Bomb extends React.Component {
     clearInterval(this.interval)
   }
 
+  // displayTickOrTock() {
+  //   //if count is divisible by 2 display 'tock'
+  // }
+
   render() {
     return (
       <div>
-        <p>"tick"</p>
+        <p>'tick'</p>
       </div>
     )
   }
