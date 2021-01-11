@@ -27,7 +27,7 @@ class RouletteGun extends React.Component {
           <p>
           spinning the chamber and pulling the trigger!...
         </p>  
-        <button onClick={this.handleButtonClick()}>
+        <button onClick={this.handleButtonClick}>
           <p>
             Pull the trigger!
           </p>
