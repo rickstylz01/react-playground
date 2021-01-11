@@ -22,18 +22,18 @@ class RouletteGun extends React.Component {
   }
 
   render() {
-    let invite = "Ready to play?";
+    let start = "Ready to play?";
 
     if(this.state.spinningTheChamber === true) {
-      invite = "spinning the chamber and pulling the trigger! ..."
+      start = "spinning the chamber and pulling the trigger! ..."
     } else if (this.state.chamber === this.props.bulletInChamber) {
-      invite = "BANG!!!!"
+      start = "BANG!!!!"
     }
 
     return (
       <div>
           <p>
-            {invite}
+            {start}
           </p>  
           <button onClick={this.handleButtonClick}>
             <p>
