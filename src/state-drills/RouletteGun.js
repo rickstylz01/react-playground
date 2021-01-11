@@ -11,7 +11,7 @@ class RouletteGun extends React.Component {
       spinningTheChamber: true
     })
 
-    this.timeout = setTimeout(() => {
+    setTimeout(() => {
       const randomChamber = Math.ceil(Math.random() * 8);
 
       this.setState({
@@ -22,16 +22,24 @@ class RouletteGun extends React.Component {
   }
 
   render() {
+    let invite = "Ready to play?";
+
+    if(this.state.spinningTheChamber === true) {
+      invite = "spinning the chamber and pulling the trigger! ..."
+    } else if (this.state.chamber === this.props.bulletInChamber) {
+      invite = "BANG!!!!"
+    }
+
     return (
       <div>
           <p>
-          spinning the chamber and pulling the trigger!...
-        </p>  
-        <button onClick={this.handleButtonClick}>
-          <p>
-            Pull the trigger!
-          </p>
-        </button>
+            {invite}
+          </p>  
+          <button onClick={this.handleButtonClick}>
+            <p>
+              Pull the trigger!
+            </p>
+          </button>
       </div>
     )
   }
