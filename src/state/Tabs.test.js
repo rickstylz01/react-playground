@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import toJson from "enzyme-to-json";
 import Tabs from '../state-drills/Tabs';
-import renderer from 'react-test-renderer';
 
 describe(`Tabs Component`, () => {
   const tabsProp = [
     { name: 'First tab',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.'},
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.' },
     { name: 'Second tab',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.'},
+      content: 'Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
     { name: 'Third tab',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.'},
+      content: 'Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur.' },
   ];
 
   it('renders without errors', () => {
@@ -19,8 +20,17 @@ describe(`Tabs Component`, () => {
     ReactDOM.unmountComponentAtNode(div);
   })
 
+  it('renders empty given no tabs', () => {
+    const wrapper = shallow(<Tabs />)
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
+
   it('renders the first tab by default', () => {
-    const tree = renderer.create(<Tabs tabs={tabsProp} />).toJSON()
-    expect(tree).toMatchSnapshot()
+    const wrapper = shallow(<Tabs tabs={tabsProp} />)
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('closes the first tab and opens any clicked tab', () => {
+    const wrapper = shallow(<Tabs tabs={tabsProp} />)
   })
 })

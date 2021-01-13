@@ -1,14 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tabs Component renders empty given no tabs 1`] = `<div />`;
+
 exports[`Tabs Component renders the first tab by default 1`] = `
 <div>
-  <button>
+  <button
+    key="0"
+    onClick={[Function]}
+  >
     First tab
   </button>
-  <button>
+  <button
+    key="1"
+    onClick={[Function]}
+  >
     Second tab
   </button>
-  <button>
+  <button
+    key="2"
+    onClick={[Function]}
+  >
     Third tab
   </button>
   <div
