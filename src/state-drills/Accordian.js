@@ -36,7 +36,7 @@ render() {
   return (
     <div>
       {this.renderButtons()}
-      {this.renderContent()}
+      {this.props.sections.length && this.renderContent()}
     </div>
   )
 }
