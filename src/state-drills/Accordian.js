@@ -21,7 +21,7 @@ class Accordian extends React.Component {
         >
           {section.title}
         </button>
-        {(this.state.currentSectionIndex === index) && <p>p</p>}
+        {(this.state.currentSectionIndex === index) && <p>{section.content}</p>}
       </li>
     ))
   }
