@@ -13,8 +13,8 @@ class Accordian extends React.Component {
   }
   renderButtons() {
     return this.props.sections.map((section, index) => (
-      <ul>
-        <li>
+      <ul key={index}>
+        <li key={index}>
           <button key={index} onClick={() => this.handleButtonClick(index)}>
             {section.title}
           </button>
@@ -32,7 +32,6 @@ class Accordian extends React.Component {
   }
 
 render() {
-
   return (
     <div>
       {this.renderButtons()}
