@@ -5,40 +5,35 @@ class Accordian extends React.Component {
     sections: [],
   };
   state = {
-    currentTabIndex: 0
+    currentSectionIndex: null
   };
 
-  handleButtonClick(index) {
-    this.setState({ currentTabIndex: index })
-  }
-  renderButtons() {
-    return this.props.sections.map((section, index) => (
-      <ul key={index}>
-        <li key={index}>
-          <button key={index} onClick={() => this.handleButtonClick(index)}>
-            {section.title}
-          </button>
-        </li>
-      </ul>
-    ))
-  }
-  renderContent() {
-    // const currentTab = this.props.sections[this.state.currentTabIndex]
-    return (
-      <div className='content'>
-        <p>p</p>
-      </div>
-    )
+  setActiveSection(index) {
+    this.setState({ currentSectionIndex: index })
   }
 
-render() {
-  return (
-    <div>
-      {this.renderButtons()}
-      {this.props.sections.length && this.renderContent()}
-    </div>
-  )
-}
+  renderButtons() {
+    return this.props.sections.map((section, index) => (
+      <li key={index}>
+        <button
+          key={index}
+          onClick={() => this.setActiveSection(index)}
+        >
+          {section.title}
+        </button>
+        {(this.state.currentSectionIndex === index) && <p>p</p>}
+      </li>
+    ))
+  }
+
+
+  render() {
+    return (
+      <ul>
+        {this.renderButtons()}
+      </ul>
+    )
+  }
 }
 
 export default Accordian;
